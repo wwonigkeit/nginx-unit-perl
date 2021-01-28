@@ -64,6 +64,6 @@ my $app = sub {
     return [
         "200",
         [ "Content-Type" => "text/html" ],
-        [ $html ],
+        [ $psgenv{'REMOTE_ADDR'} ],
     ];
 };
