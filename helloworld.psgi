@@ -7,6 +7,10 @@ my $app = sub {
     
     my $psgenv = shift;
     
+    print "$psgenv{'REMOTE_ADDR'}\n";
+    print "$psgenv{'HTTP_HOST'}\n";
+    print "$psgenv\n";
+    
     my $remoteipaddress = $psgenv{'REMOTE_ADDR'};
     my $useragent = $psgenv{'HTTP_USER_AGENT'};
     my $colour = $ENV{'BACKGROUND_COLOUR'};
