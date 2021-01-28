@@ -8,7 +8,7 @@ my $app = sub {
     my $psgenv = shift;
     
     #my $remoteipaddress = $psgenv{'REMOTE_ADDR'}; 
-    my $remoteipaddress = values %{$psgenv->{'REMOTE_ADDR'}}
+    my $remoteipaddress = values %{$psgenv->{'REMOTE_ADDR'}};
     my $useragent = $psgenv{'HTTP_USER_AGENT'};
     my $colour = $ENV{'BACKGROUND_COLOUR'};
     my $cloud = $ENV{'CLOUD_PROVIDER'};
