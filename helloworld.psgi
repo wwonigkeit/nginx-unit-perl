@@ -3,8 +3,8 @@ use Net::Address::IP::Local;
 my $app = sub {
     
     my $psgenv = shift;
-    my $ipaddress = $psgenv{'REMOTE_ADDR'};
-    my $useragent = $psgenv{'HTTP_USER_AGENT'};
+    my $remoteipaddress = $ENV{'REMOTE_ADDR'};
+    my $useragent = $ENV{'HTTP_USER_AGENT'};
     my $colour = $ENV{'BACKGROUND_COLOUR'};
     my $cloud = $ENV{'CLOUD_PROVIDER'};
     my $ipaddress = Net::Address::IP::Local->public;
@@ -42,7 +42,7 @@ my $app = sub {
                         "<div class=\"w3-container w3-content w3-center w3-padding-64\" style=\"max-width:800px\">" .
                             "<h2 class=\"w3-wide\">CONNECTION INFORMATION</h2>" .
                             "<p class=\"w3-opacity\"><i>Visitor Information</i></p>" .
-                            "<p class=\"w3-justify\">Visitor IP address: " . $ipaddress . "</p>" .
+                            "<p class=\"w3-justify\">Visitor IP address: " . $remoteipaddress . "</p>" .
                             "<p class=\"w3-justify\">Visitor User agent: " . $useragent . "</p>" .
                             "<p></p>" .
                             "<p class=\"w3-justify\">Server IP address: " . $ipaddress . "</p>" .
