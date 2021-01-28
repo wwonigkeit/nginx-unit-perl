@@ -1,10 +1,13 @@
 use Net::Address::IP::Local;
 
+use Data::Dumper qw(Dumper);
+$Data::Dumper::Sortkeys = 1;
+
 my $app = sub {
     
     my $psgenv = shift;
-    my $remoteipaddress = $ENV{'REMOTE_ADDR'};
-    my $useragent = $ENV{'HTTP_USER_AGENT'};
+    my $remoteipaddress = $psgenv{'REMOTE_ADDR'};
+    my $useragent = $psgenv{'HTTP_USER_AGENT'};
     my $colour = $ENV{'BACKGROUND_COLOUR'};
     my $cloud = $ENV{'CLOUD_PROVIDER'};
     my $ipaddress = Net::Address::IP::Local->public;
@@ -56,6 +59,6 @@ my $app = sub {
     return [
         "200",
         [ "Content-Type" => "text/html" ],
-        [ $html ],
+        [ Dumper $psgenv ],
     ];
 };
