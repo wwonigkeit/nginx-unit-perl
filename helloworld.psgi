@@ -60,6 +60,6 @@ my $app = sub {
     return [
         "200",
         [ "Content-Type" => "text/html" ],
-        [ Dump $psgenv ],
+        [ Dumper $psgenv ],
     ];
 };
