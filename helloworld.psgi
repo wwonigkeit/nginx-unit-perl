@@ -5,7 +5,7 @@ $Data::Dumper::Sortkeys = 1;
 
 my $app = sub {
     
-    my $psgenv = @_;
+    my ($psgenv) = @_;
     
     my $remoteipaddress = $psgenv{'REMOTE_ADDR'};
     my $useragent = $psgenv{'HTTP_USER_AGENT'};
