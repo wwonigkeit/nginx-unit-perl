@@ -5,9 +5,10 @@ $Data::Dumper::Sortkeys = 1;
 
 my $app = sub {
     
-    my $psgenv = @_;
+    my $psgenv = shift;
     
-    my $remoteipaddress = $psgenv{'REMOTE_ADDR'};
+    #my $remoteipaddress = $psgenv{'REMOTE_ADDR'}; 
+    my $remoteipaddress = values %{$psgenv->{'REMOTE_ADDR'}}
     my $useragent = $psgenv{'HTTP_USER_AGENT'};
     my $colour = $ENV{'BACKGROUND_COLOUR'};
     my $cloud = $ENV{'CLOUD_PROVIDER'};
@@ -54,7 +55,6 @@ my $app = sub {
                             "<p class=\"w3-justify\">Server local time: " . localtime() . "</p>" .
                             "<p></p>" .
                         "</div>" .
-                        Dumper $psgenv .
                     "</body>" .
                 "</html>";
     
