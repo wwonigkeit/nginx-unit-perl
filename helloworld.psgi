@@ -54,12 +54,13 @@ my $app = sub {
                             "<p class=\"w3-justify\">Server local time: " . localtime() . "</p>" .
                             "<p></p>" .
                         "</div>" .
+                        Dumper $psgenv .
                     "</body>" .
                 "</html>";
     
     return [
         "200",
         [ "Content-Type" => "text/html" ],
-        [ Dumper $psgenv ],
+        [ $psgenv ],
     ];
 };
