@@ -1,7 +1,7 @@
 #use Net::Address::IP::Local;
 
-#use Data::Dumper qw(Dumper);
-#$Data::Dumper::Sortkeys = 1;
+use Data::Dumper qw(Dumper);
+$Data::Dumper::Sortkeys = 1;
 
 my $app = sub {
     
@@ -64,6 +64,6 @@ my $app = sub {
     return [
         "200",
         [ "Content-Type" => "text/html" ],
-        [ $psgenv{'REMOTE_ADDR'} ],
+        [ Dumper $psgenv ],
     ];
 };
