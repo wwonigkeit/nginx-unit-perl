@@ -10,45 +10,45 @@ my $app = sub {
     
     my $html =  "<!DOCTYPE html>" .
                 "<html lang=\"en\">" .
-                    "<head>",
-                        "<meta charset=\"UTF-8\">",
-                        "<title>Hello World</title>",
-                        "<meta name=\"description\" content=\"Description\">",
-                        "<meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">",
-                        "<meta http-equiv=\"refresh\" content=\"2\">",
-                        "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">",
-                        "<!-- Compiled and minified CSS -->",
-                        "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css\">",
-                        "<!-- Compiled and minified JavaScript -->",
-                        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js\"></script>",
-                        "<style>",
-                            "body {",
-                            "background-color: " . $colour .";",
-                            "\"}",
-                            "h5 {",
-                            "color: #2396d8;",
-                            "\"}",
-                        "</style>",
-                    "</head>",
-                    "<body class=\"valign-wrapper\" style=\"height:100vh;\">",
-                        "<div class=\"row\">",
-                            "<div class=\"center-align\">",
-                                "<img src=\"data:image/png;base64," . $picture . "\" alt=\"Vorteil\">",
-                                "<h5>WELCOME TO VORTEIL</h5>",
-                            "</div>",
-                        "</div>",
-                        "<div class=\"w3-container w3-content w3-center w3-padding-64\" style=\"max-width:800px\">",
-                            "<h2 class=\"w3-wide\">CONNECTION INFORMATION</h2>",
-                            "<p class=\"w3-opacity\"><i>Visitor Information</i></p>",
-                            "<p class=\"w3-justify\">Visitor IP address: " . $psgenv{'REMOTE_ADDR'} . "</p>",
-                            "<p class=\"w3-justify\">Visitor User agent: " . $psgenv{'HTTP_USER_AGENT'} . "</p>",
-                            "<p></p>",
-                            "<p class=\"w3-justify\">Server IP address: " . $ipaddress . "</p>",
-                            "<p class=\"w3-justify\">Server hosted on: " . $cloud . "</p>",
-                            "<p class=\"w3-justify\">Server local time: " . localtime() . "</p>",
-                            "<p></p>",
-                        "</div>",
-                    "</body>",
+                    "<head>" .
+                        "<meta charset=\"UTF-8\">" .
+                        "<title>Hello World</title>" .
+                        "<meta name=\"description\" content=\"Description\">" .
+                        "<meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">" .
+                        "<meta http-equiv=\"refresh\" content=\"2\">" .
+                        "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">" .
+                        "<!-- Compiled and minified CSS -->" .
+                        "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css\">" .
+                        "<!-- Compiled and minified JavaScript -->" .
+                        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js\"></script>" .
+                        "<style>" .
+                            "body {" .
+                            "background-color: " . $colour .";" .
+                            "\"}" .
+                            "h5 {" .
+                            "color: #2396d8;" .
+                            "\"}" .
+                        "</style>" .
+                    "</head>" .
+                    "<body class=\"valign-wrapper\" style=\"height:100vh;\">" .
+                        "<div class=\"row\">" .
+                            "<div class=\"center-align\">" .
+                                "<img src=\"data:image/png;base64," . $picture . "\" alt=\"Vorteil\">" .
+                                "<h5>WELCOME TO VORTEIL</h5>" .
+                            "</div>" .
+                        "</div>" .
+                        "<div class=\"w3-container w3-content w3-center w3-padding-64\" style=\"max-width:800px\">" .
+                            "<h2 class=\"w3-wide\">CONNECTION INFORMATION</h2>" .
+                            "<p class=\"w3-opacity\"><i>Visitor Information</i></p>" .
+                            "<p class=\"w3-justify\">Visitor IP address: " . $psgenv{'REMOTE_ADDR'} . "</p>" .
+                            "<p class=\"w3-justify\">Visitor User agent: " . $psgenv{'HTTP_USER_AGENT'} . "</p>" .
+                            "<p></p>" .
+                            "<p class=\"w3-justify\">Server IP address: " . $ipaddress . "</p>" .
+                            "<p class=\"w3-justify\">Server hosted on: " . $cloud . "</p>" .
+                            "<p class=\"w3-justify\">Server local time: " . localtime() . "</p>" .
+                            "<p></p>" .
+                        "</div>" .
+                    "</body>" .
                 "</html>";
     
     return [
